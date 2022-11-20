@@ -882,7 +882,7 @@ fill: #FFFFFF;
  .input-check:checked + .check-text::before {
     background-color: var(--accent-text-color);
     border: none;
-  fill: var(--white-text-color);
+  fill: green;
   }
 
 .agreement {
@@ -890,7 +890,7 @@ fill: #FFFFFF;
   color: var(--accent-text-color);
 }
 .policy-icon {
-    fill: transparent;
+    fill: greenyellow;
     margin-right: 8px;
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
