@@ -559,7 +559,12 @@ background-color: var(--light-bg-color);
   margin-bottom: 10px;
   padding-left: 12px;
   background-color: transparent; 
+  color: rgba(255, 255, 255, 0.6);
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.footer-input::placeholder {
+  color: var(--footer-contacts);
+
 }
 .footer-input:focus, .footer-input:hover {
   border: 1px solid var(--accent-text-color);
@@ -576,6 +581,7 @@ background-color: var(--light-bg-color);
   font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
+  letter-spacing: 0.06em;
   border: none;
   border-radius: 4px;
   background-color: var(--accent-text-color);
@@ -751,6 +757,14 @@ fill: #FFFFFF;
   background-color: rgba(0, 0, 0, 0.2);
   transition: opacity 300ms linear, visibility 300ms linear;
 }
+.is-hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0);
+}
 .close-btn {
   position: absolute;
 
@@ -766,7 +780,7 @@ fill: #FFFFFF;
   justify-content: center;
   
 }
-.close-btn:hover, .close-btn:focus {
+.close-btn:hover .icon-close {
   fill: var(--accent-text-color);
 }
 .modal {
@@ -861,23 +875,26 @@ fill: #FFFFFF;
   content: '';
   width: 16px;
   height: 15px;
-  border-radius: 2px solid #212121;
+  border: 2px solid #212121;
   margin-right: 8px;
 }
 
-.input-check::checked + .check-text::before {
-  background-color: var(--accent-text-color);
-  border: none;
+ .input-check:checked + .check-text::before {
+    background-color: var(--accent-text-color);
+    border: none;
+  fill: var(--white-text-color);
+  }
+
+.agreement {
+  text-decoration: underline;
+  color: var(--accent-text-color);
+}
+.policy-icon {
+    fill: transparent;
+    margin-right: 8px;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.is-hidden {
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-}
-.backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scale(0);
-}
 .modal-button {
   display: flex;
 
@@ -889,6 +906,7 @@ fill: #FFFFFF;
   font-weight: 700;
   font-size: 16px;
   line-height: 1.87;
+  letter-spacing: 0.06em;
   border: none;
   border-radius: 4px;
   background-color: var(--accent-text-color);
@@ -904,13 +922,7 @@ fill: #FFFFFF;
 .modal-button:focus {
   background-color: #188ce8;
 }
-.agreement {
-  text-decoration: underline;
-}
-.policy-icon {
-    fill: transparent;
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+
 /*.check-text {
   display: flex;
     align-items: baseline;
